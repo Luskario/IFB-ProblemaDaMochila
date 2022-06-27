@@ -13,6 +13,6 @@ typedef struct item Item;
 typedef struct mochila Mochila;
 
 void menorPeso(Item *itens, Mochila *mochila);
-void menorPeso(Item *itens, Mochila *mochila);
+void custoBeneficio(Item *itens, Mochila *mochila);
 
 #endif
