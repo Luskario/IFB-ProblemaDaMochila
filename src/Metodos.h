@@ -12,8 +12,9 @@ struct mochila {
 typedef struct item Item;
 typedef struct mochila Mochila;
 
-void menorPeso(Item *itens, Mochila *mochila);
-void custoBeneficio(Item *itens, Mochila *mochila);
-void progDinamica(Item *itens, Mochila *mochila);
+void menorPeso(Item *itens, Mochila mochila, int qtd);
+void custoBeneficio(Item *itens, Mochila mochila, int qtd);
+void progDinamica(Item *itens, Mochila mochila, int qtd);
+void criarResposta(Item *itens);
 
 #endif
