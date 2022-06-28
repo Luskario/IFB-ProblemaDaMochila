@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Metodos.h"
+#include "MetodoAux.h"
 
 void menorPeso(Item *itens, Mochila mochila, int qtd){
     Item menor = {0, 0};
