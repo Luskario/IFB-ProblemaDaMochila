@@ -1,42 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "MetodoAux.h"
+#include "Metodos.h"
 
 
-void quickSort(int* V, int inicio, int fim){
-    int pivo;
-
-    if(fim > inicio){
-        pivo = particao(V, inicio, fim);
-        quickSort(V, inicio, pivo-1);       //realiza do inicio até o pivo
-        quickSort(V, pivo+1, fim);            //realiza do pivo até o fim
+void mergesort(int inicio, int fim, int *Vetor){
+    if (inicio < fim-1) {
+        int q = (inicio + fim)/2;
+        mergesort(inicio, q, Vetor);
+        mergesort(q, fim, Vetor);
+        merge(inicio, q, fim, Vetor);
     }
 }
 
-int particao(int* V, int inicio, int fim){
-    int esquerda, direita, pivo, aux;
-    esquerda = inicio;
-    direita = fim;
-    pivo = V[inicio];
+void merge(int inicio, int q, int fim, int *Vetor){
+    int i, j, *w;
+    w = malloc ((fim-inicio) * sizeof(int));
 
-    while(esquerda < direita){
-
-        while(esquerda <= fim && V[esquerda] <= pivo){      //percorre da esquerda para direita
-            esquerda++;
-        }
-
-        while(direita >= 0 && V[direita] > pivo){           //percorre da direita para esquerda
-            direita--;
-        }
-
-        if(esquerda < direita){     //inverte a posição
-            aux = V[esquerda];
-            V[esquerda] = V[direita];
-            V[direita] = aux;
-        }
+    for (i = inicio; i < q; i++){
+        w[i-inicio] = Vetor[i];
     }
-    V[inicio] = V[direita];
-    V[direita] = pivo;
+    for (j = q; j < fim; j++){
+        w[fim-inicio+q-j-1] = Vetor[j];
+    }
+    i = 0; 
+    j = fim-inicio-1;
 
-    return direita;     // retorna o valor do pivo
+    for (int k = inicio; k < fim; k++){
+        if (w[i] <= w[j]){
+            Vetor[k] = w[i++];
+        } else{
+            Vetor[k] = w[j--];
+        } 
+    }
+    free (w);
 }

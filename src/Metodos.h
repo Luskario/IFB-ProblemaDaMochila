@@ -4,10 +4,11 @@
 struct item {
     int valor;
     int peso;
+    int indice;
 };
 struct mochila {
     int capacidade;
-    Item *itens;
+    int *itens;
 };
 typedef struct item Item;
 typedef struct mochila Mochila;

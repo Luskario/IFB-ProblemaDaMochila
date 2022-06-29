@@ -8,7 +8,7 @@ void menorPeso(Item *itens, Mochila mochila, int qtd){
     int i, pesoTotal = 0, resposta[qtd];
     Item ordenado[qtd];
 
-    //ordenar o vetor depois
+    //mergesort(itens, 0, qtd);
 
 
     while(mochila.capacidade > pesoTotal){

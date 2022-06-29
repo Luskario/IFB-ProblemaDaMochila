@@ -1,7 +1,7 @@
 #ifndef MetodoAux
 #define MetodoAux
 
-void quickSort(int* V, int inicio, int fim);
-int particao(int* V, int inicio, int fim);
+void mergesort(int inicio, int fim, int *Vetor);
+void merge(int inicio, int q, int fim, int *Vetor);
 
 #endif
