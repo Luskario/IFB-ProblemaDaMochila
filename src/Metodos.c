@@ -14,9 +14,6 @@ void menorPeso(Item *itens, Mochila mochila, int qtd){
     while(mochila.capacidade > pesoTotal){
         
     }
-
-
-
 }
 void custoBeneficio(Item *itens, Mochila mochila, int qtd){
     

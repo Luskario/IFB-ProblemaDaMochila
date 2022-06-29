@@ -4,18 +4,18 @@
 #include "Metodos.h"
 
 
-void mergesort(int inicio, int fim, int *Vetor){
+void mergesort(Item *Vetor, int inicio, int fim){
     if (inicio < fim-1) {
         int q = (inicio + fim)/2;
-        mergesort(inicio, q, Vetor);
-        mergesort(q, fim, Vetor);
-        merge(inicio, q, fim, Vetor);
+        mergesort(Vetor, inicio, q);
+        mergesort(Vetor, q, fim);
+        merge(Vetor, inicio, q, fim);
     }
 }
 
-void merge(int inicio, int q, int fim, int *Vetor){
-    int i, j, *w;
-    w = malloc ((fim-inicio) * sizeof(int));
+void merge(Item *Vetor, int inicio, int q, int fim){
+    int i, j;
+    Item *w = (Item*)malloc ((fim-inicio) * sizeof(Item));
 
     for (i = inicio; i < q; i++){
         w[i-inicio] = Vetor[i];
@@ -27,7 +27,7 @@ void merge(int inicio, int q, int fim, int *Vetor){
     j = fim-inicio-1;
 
     for (int k = inicio; k < fim; k++){
-        if (w[i] <= w[j]){
+        if (w[i].peso <= w[j].peso){
             Vetor[k] = w[i++];
         } else{
             Vetor[k] = w[j--];

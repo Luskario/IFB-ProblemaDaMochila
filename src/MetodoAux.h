@@ -1,7 +1,8 @@
 #ifndef MetodoAux
 #define MetodoAux
+#include "Metodos.h"
 
-void mergesort(int inicio, int fim, int *Vetor);
-void merge(int inicio, int q, int fim, int *Vetor);
+void mergesort(Item *Vetor, int inicio, int fim);
+void merge(Item *Vetor, int inicio, int q, int fim);
 
 #endif
