@@ -3,6 +3,24 @@
 #include "MetodoAux.h"
 #include "Metodos.h"
 
+int ordem(int ordem, Item *w, int i, int j){
+    int resultado;
+    switch (ordem){
+    case 0:
+        resultado = w[i].peso <= w[j].peso;
+        break;
+    case 1:
+        resultado = w[i].peso <= w[j].peso;
+        break;
+    case 2:
+        resultado = w[i].indice <= w[j].indice;
+        break;
+    default:
+        break;
+    }
+
+    return resultado;
+}
 
 void mergesort(Item *Vetor, int inicio, int fim){
     if (inicio < fim-1) {
@@ -27,7 +45,7 @@ void merge(Item *Vetor, int inicio, int q, int fim){
     j = fim-inicio-1;
 
     for (int k = inicio; k < fim; k++){
-        if (w[i].peso <= w[j].peso){
+        if (ordem(0, w, i, j)){
             Vetor[k] = w[i++];
         } else{
             Vetor[k] = w[j--];

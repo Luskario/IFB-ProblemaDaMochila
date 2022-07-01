@@ -3,19 +3,19 @@
 #include "Metodos.h"
 #include "MetodoAux.h"
 
-void menorPeso(Item *itens, Mochila mochila, int qtd){
-    Item menor = {0, 0};
-    int i, pesoTotal = 0, resposta[qtd];
-    Item ordenado[qtd];
+void menorPeso(Item *itens, Mochila mochila, int qtd, int *resposta){
+    int i = 0, pesoTotal = 0;
+    
+    mergesort(itens, 0, qtd);
 
-    //mergesort(itens, 0, qtd);
+    while(mochila.capacidade > pesoTotal + itens[i].peso){
 
-
-    while(mochila.capacidade > pesoTotal){
-        
+        pesoTotal = pesoTotal + itens[i].peso;
+        resposta[itens[i].indice] = 1;
+        i++;
     }
 }
-void custoBeneficio(Item *itens, Mochila mochila, int qtd){
+void custoBeneficio(Item *itens, Mochila mochila, int qtd, int *resposta){
     
 }
 
@@ -23,6 +23,6 @@ void progDinamica(Item *itens, Mochila mochila, int qtd){
     
 }
 
-void criarResposta(Item *itens){
+void criarResposta(Item *itens, int *valores){
     
 }
