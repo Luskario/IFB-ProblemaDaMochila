@@ -19,6 +19,7 @@ void custoBeneficio(Item *itens, Mochila mochila, int qtd, int *resposta){
     int i, pesoTotal = 0;
     
     mergesort(itens, 0, qtd);
+    
     for(i=0; i<qtd;i++){
         if(mochila.capacidade > pesoTotal + itens[i].peso){
             pesoTotal = pesoTotal + itens[i].peso;
