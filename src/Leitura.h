@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 int lerDado(FILE *arq);
+Mochila lerMochila(FILE *arq);
 Item lerItem(FILE *arq);
 
 

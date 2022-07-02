@@ -12,6 +12,16 @@ int lerDado(FILE *arq){
     return valor;
 }
 
+Mochila lerMochila(FILE *arq){
+    int valor;
+    Mochila mochila;
+
+    fscanf(arq, "%d", &mochila.capacidade);
+    fscanf(arq, "%d", &mochila.qtd);
+
+    return mochila;
+}
+
 
 Item lerItem(FILE *arq){
     Item dado;

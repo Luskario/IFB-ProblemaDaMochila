@@ -8,14 +8,14 @@ struct item {
 };
 struct mochila {
     int capacidade;
-    int *itens;
+    int qtd;
 };
 typedef struct item Item;
 typedef struct mochila Mochila;
 
-void menorPeso(Item *itens, Mochila mochila, int qtd, int *resposta);
-void custoBeneficio(Item *itens, Mochila mochila, int qtd, int *resposta);
-void progDinamica(Item *itens, Mochila mochila, int qtd);
-void criarResposta(Item *itens, int *valores);
+void menorPeso(Item *itens, Mochila mochila,  int *resposta);
+void custoBeneficio(Item *itens, Mochila mochila, int *resposta);
+void progDinamica(Item *itens, Mochila mochila);
+int criarResposta(Item *itens, int *valores, int qtd);
 
 #endif
