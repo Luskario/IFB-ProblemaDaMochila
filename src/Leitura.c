@@ -4,12 +4,14 @@
 #include "Metodos.h"
 
 
-int lerDado(FILE *arq){
+Mochila lerDado(FILE *arq){
     int valor;
+    Mochila mochila;
 
-    fscanf(arq, "%d", &valor);
+    fscanf(arq, "%d", &mochila.capacidade);
+    fscanf(arq, "%d", &mochila.qtd);
 
-    return valor;
+    return mochila;
 }
 
 
