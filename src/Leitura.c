@@ -4,7 +4,15 @@
 #include "Metodos.h"
 
 
-Mochila lerDado(FILE *arq){
+int lerDado(FILE *arq){
+    int valor;
+
+    fscanf(arq, "%d", &valor);
+
+    return valor;
+}
+
+Mochila lerMochila(FILE *arq){
     int valor;
     Mochila mochila;
 

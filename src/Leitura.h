@@ -3,7 +3,8 @@
 #include "Metodos.h"
 #include <stdio.h>
 
-Mochila lerDado(FILE *arq);
+int lerDado(FILE *arq);
+Mochila lerMochila(FILE *arq);
 Item lerItem(FILE *arq);
 
 
