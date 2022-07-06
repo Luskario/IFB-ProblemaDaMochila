@@ -15,7 +15,8 @@ typedef struct mochila Mochila;
 
 void menorPeso(Item *itens, Mochila mochila,  int *resposta);
 void custoBeneficio(Item *itens, Mochila mochila, int *resposta);
-void progDinamica(Item *itens, Mochila mochila);
-int criarResposta(Item *itens, int *valores, int qtd);
+int progDinamica(Item *itens, Mochila mochila, int *resposta);
+int calcularTotal(Item *itens, int *valores, int qtd);
+int max(int a, int b);
 
 #endif
