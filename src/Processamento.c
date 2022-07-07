@@ -15,11 +15,11 @@ void executar(char* ArqEntrada){
         itens[i].indice = i;
     }
     
-    menorPeso(itens, m, resposta);
+    menorPeso(itens, m);
 
-    custoBeneficio(itens, m, resposta);
+    custoBeneficio(itens, m);
 
-    progDinamica(itens, m, resposta);
+    progDinamica(itens, m);
 
 
     fclose(arq);
