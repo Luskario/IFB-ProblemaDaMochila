@@ -16,8 +16,8 @@ Mochila lerMochila(FILE *arq){
     int valor;
     Mochila mochila;
 
-    fscanf(arq, "%d", &mochila.capacidade);
     fscanf(arq, "%d", &mochila.qtd);
+    fscanf(arq, "%d", &mochila.capacidade);
 
     return mochila;
 }
@@ -31,8 +31,8 @@ Item lerItem(FILE *arq){
     fscanf(arq, "%c", &aux);
 
     //ler o valor e peso de cada item
-    fscanf(arq, "%d", &dado.peso);
     fscanf(arq, "%d", &dado.valor);
+    fscanf(arq, "%d", &dado.peso);
     
     return dado;
 }
