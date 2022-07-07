@@ -7,10 +7,11 @@
 
 int main(void){
 
-    char arquivos[21][30]={{}};
+    char entradas[6][30]={{}};
+
 
     Item teste[10] = {{52, 52, 0}, {200, 24, 1}, {1, 123, 2}, {5123, 43, 3}, 
-    {2, 1, 4}, {54, 1654, 5}, {32, 24, 6}, {7, 7, 7}, {2, 9, 8}, {54, 8, 9}};
+    {2, 1, 4}, {54, 1654, 5}, {32, 24, 6}, {9, 7, 7}, {35, 2, 8}, {54, 8, 9}};
     Mochila mochila = {100, 10};
     
     int x[10] = {1, 4, 534, 1, 4, 5, 42, 64, 7, 10};
@@ -29,7 +30,8 @@ int main(void){
     }
 
     //printf("\n %d \n", calcularTotal(teste, resp, 10));
-    printf("\n %d \n", progDinamica(teste, mochila, resp));
-    
+    printf("\n %d \n", progDinamica(teste, mochila));
+    printf("\n %d \n", custoBeneficio(teste, mochila));
+    printf("\n %d \n", menorPeso(teste, mochila));
     return 0;
 }
