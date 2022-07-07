@@ -18,7 +18,7 @@ int menorPeso(Item *itens, Mochila mochila){
     return valorTotal;
 }
 
-int custoBeneficio(Item *itens, Mochila mochila){
+int beneficioCusto(Item *itens, Mochila mochila){
     int i, pesoTotal = 0, valorTotal = 0;
     
     mergesort(itens, 0, mochila.qtd, 1);
@@ -34,18 +34,18 @@ int custoBeneficio(Item *itens, Mochila mochila){
 }
 
 int progDinamica(Item *itens, Mochila mochila){
-    int i, w;
+    int i, peso;
     int K[mochila.qtd + 1][mochila.capacidade + 1];
  
     for (i = 0; i <= mochila.qtd; i++){
-        for (w = 0; w <= mochila.capacidade; w++){
-            if (i == 0 || w == 0){
-                K[i][w] = 0;
+        for (peso = 0; peso <= mochila.capacidade; peso++){
+            if (i == 0 || peso == 0){
+                K[i][peso] = 0;
             } 
-            else if (itens[i - 1].peso <= w){
-                K[i][w] = max(itens[i - 1].valor + K[i - 1][w - itens[i - 1].peso],K[i - 1][w]);}
+            else if (itens[i - 1].peso <= peso){
+                K[i][peso] = max(itens[i - 1].valor + K[i - 1][peso - itens[i - 1].peso],K[i - 1][peso]);}
             else{
-                K[i][w] = K[i - 1][w];
+                K[i][peso] = K[i - 1][peso];
             }
         }
     }
@@ -54,5 +54,9 @@ int progDinamica(Item *itens, Mochila mochila){
 }
 
 int max(int a, int b){
-    return (a > b) ? a : b;
+    if(a > b){
+        return a;
+    } else {
+        return b;
+    }
 }
