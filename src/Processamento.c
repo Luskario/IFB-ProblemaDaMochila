@@ -5,11 +5,12 @@
 #include "Leitura.h"
 
 void executar(char* ArqEntrada){
-    char* teste = "/home/tw/Documentos/git/ProblemaDaMochila/dataset/large_scale/knapPI_1_100_1000_1";
+    char* teste = "/home/tw/Documentos/git/ProblemaDaMochila/dataset/large_scale/knapPI_1_500_1000_1";
     FILE *arq = fopen(teste, "r");
     Mochila m = lerMochila(arq);
     Item itens[m.qtd];
-    int i, resposta[m.qtd];
+    int i, valorTotal;
+    float tempo, fracao;
 
     //printf("%d %d \n", m.capacidade, m.qtd);
 
@@ -21,8 +22,8 @@ void executar(char* ArqEntrada){
     
     
     
-    //menorPeso(itens, m);
-
+    //valorTotal = menorPeso(itens, m);
+    //fracao = ((float) valorTotal)/((float) valorEficaz);
     //beneficioCusto(itens, m);
 
     printf("%d \n", progDinamica(itens, m));
