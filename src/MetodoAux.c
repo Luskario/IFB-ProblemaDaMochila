@@ -12,7 +12,7 @@ int ordenacao(int ordem, Item *w, int i, int j){
     case 1:         //ordena pelo beneficio
         resultado = (((float)w[i].valor/w[i].peso) >= ((float)w[j].valor/w[j].peso));
         break;
-    case 2:         //ordencao dinamica
+    case 2:
         resultado = (w[i].indice <= w[j].indice);
         break;
     default:
