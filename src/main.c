@@ -48,7 +48,7 @@ int main(void){
     for(i=0; i<9; i++){
         printf("\n %s \n\n", entradas[i]);
         for(j=0; j<3; j++){
-            printf("tempo: %.2f ns ----- Valor Total: %d ----- Eficacia: %f\n", 
+            printf("tempo: %.2f ms ----- Valor Total: %d ----- Eficacia: %f\n", 
             (r[i].mediaTempo[j]), r[i].valores[j], 
             (((float)r[i].valores[j]) / ((float)r[i].valorEficaz)));
         }
