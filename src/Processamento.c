@@ -18,22 +18,19 @@ void executar(char* ArqEntrada, int *Resp, float* Tempos){
         itens[i].indice = i;
     }
 
-
-    //-----------------------------------------------------------------------------//
-
     timer = clock();
     Resp[0] = menorPeso(itens, m);
     timer = clock() - timer;
     Tempos[0] = ((float)timer/CLOCKS_PER_SEC);
 
-    mergesort(itens, 0, m.qtd, 2);
+    mergesort(itens, 0, m.qtd, 2);          //Reordena vetor para o próximo teste
 
     timer = clock();
     Resp[1] = beneficioCusto(itens, m);
     timer = clock() - timer;
     Tempos[1] = ((float)timer/CLOCKS_PER_SEC);
 
-    mergesort(itens, 0, m.qtd, 2);
+    mergesort(itens, 0, m.qtd, 2);          //Reordena vetor para o próximo teste
 
     timer = clock();
     Resp[2] = progDinamica(itens, m);
